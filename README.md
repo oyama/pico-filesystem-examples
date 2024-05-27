@@ -23,7 +23,7 @@ make
 If no SD card device is connected, the `WITHOUT_BLOCKDEVICE_SD` option can be specified to skip the SD card manipulation procedure from the examples:
 
 ```bash
-PICO_SDK_FETCH_FROM_GIT=1 cmake .. -DWITHOUT_BLOCKDEVICE_SD=YES
+PICO_SDK_PATH=/path/to/forked/pico-sdk cmake .. -DWITHOUT_BLOCKDEVICE_SD=YES
 ```
 
 ## Running examples of using SD cards
