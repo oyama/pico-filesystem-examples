@@ -1,7 +1,7 @@
 # Example of flexible file system support for pico-sdk.
 
 This project is a demonstration of the **pico_filesystem** library, which was added independently to pico-sdk 1.5 _develop_ branch. The library adds a POSIX file API compliant file manipulation API that allows access to Pico's on-board flash memory and SD card.
-The project requires a **forked pico-sdk**. Check it out and specify it in `PICO_SDK_PATH`:
+The project requires a [**forked pico-sdk**](https://github.com/oyama/pico-sdk/tree/filesystem_support). Check it out and specify it in `PICO_SDK_PATH`:
 
 ## How to build
 
