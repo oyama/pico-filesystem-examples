@@ -8,6 +8,7 @@
 #include <pico/filesystem/filesystem/fat.h>
 #include <pico/filesystem/filesystem/littlefs.h>
 
+
 bool fs_init(void) {
     printf("Initialize custom file system\n");
 
