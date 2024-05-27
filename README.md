@@ -3,6 +3,9 @@
 This project is a demonstration codes of the **pico_filesystem** library, which was added independently to pico-sdk 1.5 _develop_ branch. The library adds a POSIX file API compliant file manipulation API that allows access to Pico's on-board flash memory and SD card.
 The project requires a [**forked pico-sdk**](https://github.com/oyama/pico-sdk/tree/filesystem_support). Check it out and specify it in `PICO_SDK_PATH`:
 
+Pull requests to pico-sdk are as follows:
+https://github.com/raspberrypi/pico-sdk/pull/1715
+
 ## How to build forked pico-sdk
 
 ```bash
