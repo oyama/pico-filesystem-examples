@@ -12,8 +12,9 @@ add_executable(pico-filesystem main.c)
 target_link_libraries(pico-filesystem PRIVATE pico_stdlib)
 
 pico_enable_stdio_usb(pico-filesystem 1)
-pico_enable_filesystem(pico-filesystem)
+pico_add_extra_outputs(pico-filesystem)
 
+pico_enable_filesystem(pico-filesystem)
 # pico_enable_filesystem(pico-filesystem FS_INIT my_fs_init.c)
 # target_link_libraries(pico-filesystem PRIVATE
 #    pico_stdlib
