@@ -28,6 +28,8 @@ target_link_libraries(tests PRIVATE
     pico_filesystem_filesystem_littlefs
 )
 target_compile_options(tests PRIVATE -Werror -Wall -Wextra -Wnull-dereference)
+
+
 if(WITHOUT_BLOCKDEVICE_SD)
     target_compile_definitions(tests PRIVATE WITHOUT_BLOCKDEVICE_SD=1)
 endif()

@@ -77,7 +77,7 @@ static void test_api_file_open_many() {
     test_printf("open many files");
 
     int fd = open("/file", O_WRONLY|O_CREAT);
-    assert(fd != -1);
+    assert(fd == MIN_FILENO);
 
     int err = close(fd);
     assert(err == 0);
