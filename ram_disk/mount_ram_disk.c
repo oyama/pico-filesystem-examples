@@ -16,7 +16,7 @@ bool fs_init(void) {
 
     int err = fs_format(lfs, heap);
     if (err == -1) {
-        printf("format RAMDISK failed: %s\n", strerror(errno));
+        printf("format RAM disk failed: %s\n", strerror(errno));
         return false;
     }
     err = fs_mount("/", lfs, heap);
