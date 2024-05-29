@@ -24,6 +24,7 @@ target_link_libraries(tests PRIVATE
     pico_filesystem
     pico_filesystem_blockdevice_sd
     pico_filesystem_blockdevice_flash
+    pico_filesystem_blockdevice_heap
     pico_filesystem_filesystem_fat
     pico_filesystem_filesystem_littlefs
 )
