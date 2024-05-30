@@ -6,6 +6,18 @@ The project requires a [**forked pico-sdk**](https://github.com/oyama/pico-sdk/t
 Pull requests to pico-sdk are as follows:
 https://github.com/raspberrypi/pico-sdk/pull/1715
 
+## Examples
+
+| App             | Description                                                             |
+|-----------------|-------------------------------------------------------------------------|
+| [hello\_world](hello_world) | File writing and reading                                    |
+| [auto\_init](auto_init)     | Transparently perform file system initialisation.           |
+| [ram\_disk](ram_disk)       | RAM disk with Heap block device.                                                        |
+| [benchmark](benchmark)      | Data transfer tests with different block devices and different file system combinations.|
+| [unittest](unittest)        | Unit tests                                                   |
+| [usb\_msc\_logger](usb_msc_logger) | Data logger that mounts littlefs and FAT on flash memory and shares it with a PC via USB mass storage class.|
+| [custom\_blockdevice](custom_blockdevice) | Add your own block devices. Useful for debugging file systems. |
+
 ## How to build forked pico-sdk
 
 ```bash
