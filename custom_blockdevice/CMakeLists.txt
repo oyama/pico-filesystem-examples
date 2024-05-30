@@ -19,14 +19,3 @@ target_link_libraries(noisy PRIVATE
    pico_filesystem
    pico_filesystem_filesystem_littlefs
 )
-
-
-find_program(OPENOCD openocd)
-if(OPENOCD)
-  add_custom_target(flash
-    COMMAND ${OPENOCD} -f interface/cmsis-dap.cfg -f target/rp2040.cfg -c "adapter speed 5000" -c "program ${CMAKE_PROJECT_NAME}.elf reset exit"
-    DEPENDS ${CMAKE_PROJECT_NAME}
-  )
-  add_custom_target(reset COMMAND ${OPENOCD} -f interface/cmsis-dap.cfg -f target/rp2040.cfg -c init -c reset -c exit)
-endif()
-

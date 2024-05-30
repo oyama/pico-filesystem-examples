@@ -3,15 +3,11 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
-#include "blockdevice/blockdevice.h"
+#include <pico/filesystem/blockdevice.h>
 
 
 #if !defined(PICO_VFS_BLOCKDEVICE_HEAP_BLOCK_SIZE)
 #define PICO_VFS_BLOCKDEVICE_HEAP_BLOCK_SIZE        512
-#endif
-
-#if !defined(PICO_VFS_BLOCKDEVICE_HEAP_ERASE_VALUE)
-#define PICO_VFS_BLOCKDEVICE_HEAP_ERASE_VALUE      0xFF
 #endif
 
 #define ANSI_BLUE     "\e[34m"
