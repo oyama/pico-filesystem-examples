@@ -14,6 +14,7 @@ add_executable(logger
     usb_descriptors.c
 )
 target_include_directories(logger PRIVATE ${CMAKE_CURRENT_LIST_DIR})
+target_compile_options(logger PRIVATE -Os)
 target_link_libraries(logger PRIVATE
     hardware_adc
     pico_filesystem

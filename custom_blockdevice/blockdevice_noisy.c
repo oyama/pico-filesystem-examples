@@ -78,50 +78,50 @@ static int sync(blockdevice_t *device) {
     return BD_ERROR_OK;
 }
 
-static int read(blockdevice_t *device, const void *buffer, size_t addr, size_t length) {
+static int read(blockdevice_t *device, const void *buffer, bd_size_t addr, bd_size_t length) {
     blockdevice_noisy_config_t *config = device->config;
 
-    memcpy((uint8_t *)buffer, config->heap + addr, length);
+    memcpy((uint8_t *)buffer, config->heap + (size_t)addr, (size_t)length);
     printf(ANSI_CYAN);
-    printf("Read: addr=%u, length=%u\n", addr, length);
+    printf("Read: addr=%u, length=%u\n", (size_t)addr, (size_t)length);
     print_hex(buffer, length);
     printf(ANSI_CLEAR);
 
     return BD_ERROR_OK;
 }
 
-static int erase(blockdevice_t *device, size_t addr, size_t length) {
+static int erase(blockdevice_t *device, bd_size_t addr, bd_size_t length) {
     (void)device;
     (void)addr;
     (void)length;
 
     printf(ANSI_BLUE);
-    printf("Erase: addr=%u, length=%u\n", addr, length);
+    printf("Erase: addr=%u, length=%u\n", (size_t)addr, (size_t)length);
     printf(ANSI_CLEAR);
 
     return BD_ERROR_OK;
 }
 
-static int program(blockdevice_t *device, const void *buffer, size_t addr, size_t length) {
+static int program(blockdevice_t *device, const void *buffer, bd_size_t addr, bd_size_t length) {
     blockdevice_noisy_config_t *config = device->config;
 
-    memcpy(config->heap + addr, buffer, length);
+    memcpy(config->heap + (size_t)addr, buffer, (size_t)length);
     printf(ANSI_MAGENTA);
-    printf("Program: addr=%u, length=%u\n", addr, length);
+    printf("Program: addr=%u, length=%u\n", (size_t)addr, (size_t)length);
     print_hex(buffer, length);
     printf(ANSI_CLEAR);
 
     return BD_ERROR_OK;
 }
 
-static int trim(blockdevice_t *device, size_t addr, size_t length) {
+static int trim(blockdevice_t *device, bd_size_t addr, bd_size_t length) {
     (void)device;
     (void)addr;
     (void)length;
     return BD_ERROR_OK;
 }
 
-static size_t size(blockdevice_t *device) {
+static bd_size_t size(blockdevice_t *device) {
     blockdevice_noisy_config_t *config = device->config;
     return config->size;
 }
